@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>hxt.let.gs · 个人主页</title>
+  <meta name="description" content="hxt.let.gs 个人主页与项目展示，包含作品、文章、技能与联系方式。" />
+  <style>
+    :root{
+      --bg:#0b1220; --card:#121b2e; --muted:#9db0d1; --text:#e8efff;
+      --brand:#6aa8ff; --brand2:#7ef0d6; --border:rgba(255,255,255,.08);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", Arial;
+      background: radial-gradient(1200px 800px at 20% 0%, rgba(106,168,255,.25), transparent 50%),
+                  radial-gradient(1000px 700px at 90% 10%, rgba(126,240,214,.18), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:var(--brand); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1050px; margin:0 auto; padding:28px 18px 60px}
+    header{
+      display:flex; gap:18px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+      padding:18px; border:1px solid var(--border); border-radius:16px; background:rgba(18,27,46,.75);
+      backdrop-filter: blur(8px);
+    }
+    .brand{display:flex; align-items:center; gap:14px}
+    .avatar{
+      width:54px; height:54px; border-radius:14px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+    }
+    .title h1{margin:0; font-size:20px}
+    .title p{margin:4px 0 0; color:var(--muted); font-size:13px}
+    nav{display:flex; gap:10px; flex-wrap:wrap}
+    nav a{
+      padding:8px 10px; border:1px solid var(--border); border-radius:12px;
+      background:rgba(255,255,255,.03);
+      font-size:13px; color:var(--text);
+    }
+    nav a:hover{border-color: rgba(106,168,255,.5)}
+    .hero{
+      margin-top:18px;
+      padding:20px; border:1px solid var(--border); border-radius:18px; background:rgba(18,27,46,.6);
+    }
+    .hero h2{margin:0 0 8px; font-size:22px}
+    .hero p{margin:0; color:var(--muted)}
+    .grid{
+      margin-top:18px;
+      display:grid; grid-template-columns: 1.2fr .8fr; gap:14px;
+    }
+    @media (max-width: 900px){ .grid{grid-template-columns: 1fr} }
+    .card{
+      padding:18px; border:1px solid var(--border); border-radius:18px; background:rgba(18,27,46,.6);
+    }
+    .card h3{margin:0 0 10px; font-size:16px}
+    .muted{color:var(--muted)}
+    .list{margin:10px 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px}
+    .item{
+      padding:12px; border:1px solid var(--border); border-radius:14px; background:rgba(255,255,255,.03);
+    }
+    .item strong{display:block; margin-bottom:4px}
+    .tags{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px}
+    .tag{
+      font-size:12px; color:var(--muted);
+      border:1px solid var(--border); border-radius:999px; padding:4px 10px; background:rgba(255,255,255,.02);
+    }
+    .kpi{display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; margin-top:12px}
+    @media (max-width: 520px){ .kpi{grid-template-columns: 1fr} }
+    .kpi .item{padding:14px}
+    footer{margin-top:18px; color:var(--muted); font-size:13px; text-align:center}
+    .btnrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    .btn{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px; border-radius:14px; border:1px solid rgba(106,168,255,.35);
+      background:linear-gradient(135deg, rgba(106,168,255,.18), rgba(126,240,214,.10));
+      color:var(--text); font-size:13px;
+    }
+    .btn:hover{border-color: rgba(126,240,214,.6); text-decoration:none}
+    code{background:rgba(255,255,255,.05); padding:2px 6px; border-radius:8px; border:1px solid var(--border)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="avatar" aria-hidden="true"></div>
+        <div class="title">
+          <h1>hxt.let.gs</h1>
+          <p>个人主页 · 项目展示 · 文章与笔记（持续更新）</p>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">关于</a>
+        <a href="#projects">项目</a>
+        <a href="#posts">文章</a>
+        <a href="#skills">技能</a>
+        <a href="#timeline">动态</a>
+        <a href="#contact">联系</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h2>👋 你好，我是 胡学涛</h2>
+      <p class="muted">
+        这个站点用于展示个人作品、技术笔记与实验项目。当前为正式上线的初始版本，
+        后续会继续补充更完整的内容与案例。
+      </p>
+      <div class="btnrow">
+        <a class="btn" href="#projects">查看项目</a>
+        <a class="btn" href="#contact">联系我</a>
+        <a class="btn" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+      <div class="kpi">
+        <div class="item">
+          <strong>站点用途</strong>
+          <div class="muted">个人主页 / 作品集 / 笔记</div>
+        </div>
+        <div class="item">
+          <strong>当前状态</strong>
+          <div class="muted">已部署 · 可访问 · 可持续更新</div>
+        </div>
+        <div class="item">
+          <strong>技术栈</strong>
+          <div class="muted">GitHub Pages · 静态站</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid">
+      <section id="about" class="card">
+        <h3>关于我</h3>
+        <p class="muted">
+         我是一名大学生，今年在读大三，计划考研，我的专业是电气工程及其自动化，平时喜欢计算机和电子设备，希望可以和大家一起交流学习经验，共同进步。
+        </p>
+        <ul class="list">
+          <li class="item">
+            <strong>站点内容规划</strong>
+            <div class="muted">
+              1) 项目与作品集<br/>
+              2) 技术/学习笔记<br/>
+              3) 工具与资源整理<br/>
+              4) 个人动态与里程碑
+            </div>
+          </li>
+          <li class="item">
+            <strong>声明</strong>
+            <div class="muted">
+              本站为个人主页与学习记录用途，不提供违法/侵权内容；如涉及引用，会标注来源。
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <aside class="card">
+        <h3>快捷信息</h3>
+        <ul class="list">
+          <li class="item"><strong>域名</strong><div class="muted"><code>hxt.let.gs</code></div></li>
+          <li class="item"><strong>部署</strong><div class="muted">GitHub Pages（静态托管）</div></li>
+          <li class="item"><strong>更新频率</strong><div class="muted">每周/不定期更新</div></li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Portfolio</span>
+          <span class="tag">Notes</span>
+          <span class="tag">Projects</span>
+          <span class="tag">Links</span>
+        </div>
+      </aside>
+    </div>
+
+    <section id="projects" class="card" style="margin-top:14px;">
+      <h3>项目展示</h3>
+      <p class="muted">把你真实做过/在做的东西放上来最加分。下面是示例条目，你改成自己的。</p>
+      <ul class="list">
+        <li class="item">
+          <strong>Project A · 个人工具/脚本/小程序</strong>
+          <div class="muted">简述：解决什么问题、你做了什么、当前进度。</div>
+          <div class="tags">
+            <span class="tag">JavaScript</span><span class="tag">Automation</span><span class="tag">Open Source</span>
+          </div>
+        </li>
+        <li class="item">
+          <strong>Project B · 学习笔记 / 知识库整理</strong>
+          <div class="muted">简述：覆盖哪些主题、面向谁、更新计划。</div>
+          <div class="tags">
+            <span class="tag">Docs</span><span class="tag">Learning</span><span class="tag">Writing</span>
+          </div>
+        </li>
+        <li class="item">
+          <strong>Project C · 作品集 / Demo 页面</strong>
+          <div class="muted">简述：展示你的设计/前端/后端/数据分析等能力。</div>
+          <div class="tags">
+            <span class="tag">Frontend</span><span class="tag">UI</span><span class="tag">Performance</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="posts" class="card" style="margin-top:14px;">
+      <h3>文章与笔记（示例）</h3>
+      <p class="muted">审核机构看到“可持续更新的内容结构”通常更放心。你可以把每篇文章做成单独页面。</p>
+      <ul class="list">
+        <li class="item">
+          <strong>如何用 GitHub Pages + 自定义域名搭建个人站</strong>
+          <div class="muted">记录从仓库创建、Pages 设置、DNS 绑定到 HTTPS 的完整流程。</div>
+        </li>
+        <li class="item">
+          <strong>我的开发环境与效率工具清单</strong>
+          <div class="muted">编辑器、插件、终端、快捷脚本，以及我如何组织项目。</div>
+        </li>
+        <li class="item">
+          <strong>一个小实验：做一个极简落地页</strong>
+          <div class="muted">目标、实现、迭代过程、后续计划。</div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="skills" class="card" style="margin-top:14px;">
+      <h3>技能与方向</h3>
+      <ul class="list">
+        <li class="item">
+          <strong>技术方向</strong>
+          <div class="muted">前端 / 后端 / 数据 / 运维 / 设计（选你自己的）</div>
+        </li>
+        <li class="item">
+          <strong>常用工具</strong>
+          <div class="muted">Git、GitHub、Linux、Docker、CI/CD（选你自己的）</div>
+        </li>
+        <li class="item">
+          <strong>正在学习</strong>
+          <div class="muted">写上 1~3 个你最近在学的主题，会显得很真实。</div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="timeline" class="card" style="margin-top:14px;">
+      <h3>更新动态（时间线）</h3>
+      <ul class="list">
+        <li class="item">
+          <strong>2026-01 · 站点初始化上线</strong>
+          <div class="muted">完成主页结构、绑定域名、开启 HTTPS。</div>
+        </li>
+        <li class="item">
+          <strong>下一步计划</strong>
+          <div class="muted">新增项目详情页、文章页面、友情链接与资源库。</div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="contact" class="card" style="margin-top:14px;">
+      <h3>联系与链接</h3>
+      <ul class="list">
+        <li class="item"><strong>Email</strong><div class="muted">2199541775@qq.com）</div></li>
+        <li class="item"><strong>GitHub</strong><div class="muted">https://github.com/gvvvuhggggg</div></li>
+        <li class="item"><strong>其他</strong><div class="muted">微博 / X / 掘金 / 知乎 / B站（选填）</div></li>
+      </ul>
+    </section>
+
+    <footer>
+      © <span id="y"></span> hxt.let.gs · Hosted on GitHub Pages
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
